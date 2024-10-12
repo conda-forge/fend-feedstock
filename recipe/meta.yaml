@@ -1,5 +1,5 @@
 {% set name = "fend" %}
-{% set version = "1.4.8" %}
+{% set version = "1.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/printfn/fend/archive/v{{ version }}.tar.gz
-  sha256: 5e973bf7f53416039d5efc2f2ec360add5184625644e986808c21e5bd292fc58
+  sha256: b31befe0df562c5626c52d1cef70d272115054fa707debe56ade9e4f2f28a956
 
 build:
   number: 0
-  skip: True  # [win]
+  skip: true  # [win]
 
 requirements:
   build:
