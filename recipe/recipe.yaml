@@ -1,41 +1,41 @@
-{% set name = "fend" %}
-{% set version = "1.5.5" %}
+context:
+  version: 1.5.5
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: fend
+  version: ${{ version }}
 
 source:
-  url: https://github.com/printfn/fend/archive/v{{ version }}.tar.gz
+  url: https://github.com/printfn/fend/archive/v${{ version }}.tar.gz
   sha256: 330ca6ca5fcb4410fe75caeab0d77b0b112a355ec2a5d5848dffb0a7a7a2e7a7
 
 build:
   number: 0
-  skip: true  # [win]
+  skip: win
 
 requirements:
   build:
-    - {{ compiler('rust') }}
-    - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    - ${{ compiler('rust') }}
+    - ${{ compiler('c') }}
+    - ${{ stdlib('c') }}
     - cargo-bundle-licenses
     - pandoc
     - pkg-config
   host:
     - openssl
 
-test:
-  commands:
-    - fend --help
+tests:
+  - script:
+      - fend --help
 
 about:
-  home: https://printfn.github.io/fend
   license: MIT
   license_file:
     - LICENSE.md
     - THIRDPARTY.yml
   summary: Arbitrary-precision unit-aware calculator
-  dev_url: https://github.com/printfn/fend
+  homepage: https://printfn.github.io/fend
+  repository: https://github.com/printfn/fend
 
 extra:
   recipe-maintainers:
