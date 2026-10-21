@@ -1,5 +1,5 @@
 context:
-  version: "1.5.8"
+  version: "1.5.9"
 
 package:
   name: fend
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/printfn/fend/archive/v${{ version }}.tar.gz
-  sha256: 2c53922b83b693c852581942ddcf8e02e1bcd691f30c00e8066cdd6ab2070b86
+  sha256: 3622b09d197d4be374880f3f97256633d0481e7a3c7da2f69f2cb5141aac1721
 
 build:
   number: 0
